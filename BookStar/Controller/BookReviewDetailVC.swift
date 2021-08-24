@@ -74,6 +74,15 @@ class BookReviewDetailVC: UIViewController {
                 self.tableView.reloadData()
                 
 
+                if self.reviews.count == 0 {
+                    self.starAverage.text = "_._"
+                } else {
+                    let sum = self.reviews.reduce(0, {$0 + $1.ratings})
+                    let avgRating = sum/Double(self.reviews.count)
+                    self.starAverage.text = "\(avgRating) out of 5"
+                }
+            }
+        }
     
     @IBAction func didTapAddReview() {
         performSegue(withIdentifier: "AddReview", sender: self)
