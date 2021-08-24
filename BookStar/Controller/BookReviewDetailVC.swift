@@ -73,7 +73,6 @@ class BookReviewDetailVC: UIViewController {
                 }
                 self.tableView.reloadData()
                 
-
                 if self.reviews.count == 0 {
                     self.starAverage.text = "_._"
                 } else {
@@ -83,12 +82,11 @@ class BookReviewDetailVC: UIViewController {
                 }
             }
         }
+    }
     
     @IBAction func didTapAddReview() {
         performSegue(withIdentifier: "AddReview", sender: self)
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailsVC = segue.destination as? AddReviewController {
@@ -99,7 +97,6 @@ class BookReviewDetailVC: UIViewController {
 }
 
 extension BookReviewDetailVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviews.count
     }
@@ -108,6 +105,6 @@ extension BookReviewDetailVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as! ReviewTableViewCell
         cell.configureCell(review: reviews[indexPath.row])
         return cell
-        }
     }
+}
 
