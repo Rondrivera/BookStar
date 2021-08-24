@@ -10,12 +10,12 @@ import CoreData
 import Firebase
 import FirebaseFirestoreSwift
 
-class BookReviewDetailVC: UIViewController {
+class BookReviewDetailVC: UITableViewController {
     
     @IBOutlet weak var bookImg: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookDescription: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+
     @IBOutlet weak var starAverage: UILabel!
     
     var selectedBook: Book!
@@ -99,12 +99,12 @@ class BookReviewDetailVC: UIViewController {
     }
 }
 
-extension BookReviewDetailVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension BookReviewDetailVC {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviews.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTableViewCell") as! ReviewTableViewCell
         cell.configureCell(review: reviews[indexPath.row])
         return cell
