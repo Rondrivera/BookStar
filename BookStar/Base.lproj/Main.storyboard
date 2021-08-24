@@ -462,8 +462,8 @@
                                     <action selector="addAction:" destination="XK2-7o-muN" eventType="touchUpInside" id="kHn-AB-K9g"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="scD-kt-1Lt" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="20" y="138" width="374" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scD-kt-1Lt" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="122" y="138" width="170" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rva-Rb-NZm"/>
@@ -504,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mr5-L5-FWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3323.1884057971015" y="1636.6071428571429"/>
+            <point key="canvasLocation" x="3342" y="1375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VHC-dN-fpr">
@@ -599,6 +599,14 @@
             <point key="canvasLocation" x="-262.31884057971018" y="1376.7857142857142"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="p8m-mc-CGm">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="scD-kt-1Lt">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
