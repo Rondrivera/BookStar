@@ -26,16 +26,16 @@ class BookReviewDetailVC: UIViewController {
     var selectedGenre: String!
     var errorMessage: String = ""
     var showMessage: Bool = false {
-        willSet {
-            if newValue {
+        didSet {
+            if showMessage {
                 let messageLabel = UILabel(frame: view.bounds)
                 messageLabel.numberOfLines = 0
                 messageLabel.textAlignment = .center
                 messageLabel.text = errorMessage
                 messageLabel.sizeToFit()
-                tableView.tableHeaderView = messageLabel
-            } else {
-                tableView.tableHeaderView = nil
+                tableView.tableFooterView = messageLabel
+            }else{
+                tableView.tableFooterView = nil
             }
         }
     }
@@ -80,6 +80,9 @@ class BookReviewDetailVC: UIViewController {
                     let avgRating = sum/Double(self.reviews.count)
                     self.starAverage.text = "\(avgRating) out of 5"
                 }
+            } else {
+                self.errorMessage = "No reviews available. Please add one."
+                self.showMessage = true
             }
         }
     }
