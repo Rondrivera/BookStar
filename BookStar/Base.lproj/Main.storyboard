@@ -315,7 +315,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charlottes Web" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-OW-5IT">
-                                    <rect key="frame" x="20" y="261.5" width="374" height="29"/>
+                                    <rect key="frame" x="20" y="262" width="374" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="aqF-BZ-yRf"/>
                                     </constraints>
@@ -323,14 +323,20 @@
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-wf-mLx">
-                                    <rect key="frame" x="20" y="299" width="374" height="23.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5YK-wf-mLx">
+                                    <rect key="frame" x="20" y="299.5" width="374" height="53"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="lYf-CC-dYq"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_._" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1X-NT-Zu6">
-                                    <rect key="frame" x="20" y="233" width="24" height="20.5"/>
+                                    <rect key="frame" x="20" y="233" width="374" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="WVu-dS-gjW"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -353,6 +359,7 @@
                                 <constraint firstItem="KFO-OW-5IT" firstAttribute="top" secondItem="b1X-NT-Zu6" secondAttribute="bottom" constant="8" symbolic="YES" id="8yo-Wy-L5H"/>
                                 <constraint firstItem="KFO-OW-5IT" firstAttribute="leading" secondItem="0g9-uG-uyg" secondAttribute="leading" constant="20" id="MaE-4M-YqP"/>
                                 <constraint firstItem="0g9-uG-uyg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b1X-NT-Zu6" secondAttribute="trailing" symbolic="YES" id="OaH-b4-fyv"/>
+                                <constraint firstItem="0g9-uG-uyg" firstAttribute="trailing" secondItem="b1X-NT-Zu6" secondAttribute="trailing" constant="20" id="Ohi-nw-XZ0"/>
                                 <constraint firstItem="RJH-nd-Ptr" firstAttribute="leading" secondItem="0g9-uG-uyg" secondAttribute="leading" id="UGU-wX-Tuq"/>
                                 <constraint firstItem="RJH-nd-Ptr" firstAttribute="trailing" secondItem="0g9-uG-uyg" secondAttribute="trailing" id="bCp-jl-kNz"/>
                                 <constraint firstItem="RJH-nd-Ptr" firstAttribute="top" secondItem="0g9-uG-uyg" secondAttribute="top" id="cZt-35-03q"/>
@@ -417,7 +424,13 @@
                             <outlet property="delegate" destination="MSr-Vx-e2T" id="0P5-3a-dlf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="tdt-0i-VYD"/>
+                    <navigationItem key="navigationItem" id="tdt-0i-VYD">
+                        <barButtonItem key="rightBarButtonItem" title="Add Review" id="cwR-gD-gxQ">
+                            <connections>
+                                <action selector="didTapAddReview" destination="MSr-Vx-e2T" id="Eem-gW-SIU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bookDescription" destination="5YK-wf-mLx" id="PyN-Lo-rBe"/>
                         <outlet property="bookImg" destination="RJH-nd-Ptr" id="iKt-Io-eGF"/>
@@ -428,7 +441,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Km9-qX-COL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2413" y="2094"/>
+            <point key="canvasLocation" x="2444.9275362318845" y="1504.6875"/>
         </scene>
         <!--Write a review-->
         <scene sceneID="KCX-SP-GnP">
