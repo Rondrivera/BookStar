@@ -78,7 +78,7 @@ class BookReviewDetailVC: UITableViewController {
                 } else {
                     let sum = self.reviews.reduce(0, {$0 + $1.ratings})
                     let avgRating = sum/Double(self.reviews.count)
-                    self.starAverage.text = "\(avgRating) out of 5"
+                    self.starAverage.text = String(format: "%.2f out of 5", avgRating)
                 }
             } else {
                 self.errorMessage = "No reviews available. Please add one."
