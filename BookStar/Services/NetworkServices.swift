@@ -188,4 +188,58 @@ class NetworkServices {
             }
         }
     }
+    
+    
+    static func addFavorite(bookID:String, completionHandler: @escaping (_ succeeded: Bool, _ error: Error?) -> Void) {
+        guard let userId =  User.currentUser.id else {
+            completionHandler(false, nil)
+            return
+        }
+
+        let docRef = Firestore.firestore().collection("User").document(userId).collection("favorite").document()
+        
+        var data = [String: Any]()
+        data["bookID"] = bookID
+        
+        docRef.setData(data, merge: true) { error in
+            if let error = error {
+                completionHandler(false, error)
+            } else {
+                completionHandler(true, nil)
+            }
+        }
+    }
+    
+    static func getFavorites(userID : String, limit: Int? = nil, completionHandler: @escaping (_ response: Any?, _ error: Error?) -> Void) {
+        var ref: Query? = nil
+        if let limit = limit {
+            ref = Firestore.firestore().collection("User").document(userID).collection("favorite").limit(to: limit)
+        } else {
+            ref = Firestore.firestore().collection("User").document(userID).collection("favorite")
+        }
+        
+        ref!.getDocuments { (snapshot, error) in
+            if let error = error {
+                print(error)
+                completionHandler(nil, error)
+            } else {
+                guard let documentSnapshot = snapshot, !documentSnapshot.isEmpty else {
+                    print("error")
+                    completionHandler(nil, nil)
+                    return
+                }
+                
+                let reviewDocuments = documentSnapshot.documents
+                var reviews = [Favorite]()
+                for document in reviewDocuments {
+                    do {
+                        let review = try document.data(as: Favorite.self)
+                        reviews.append(review!)
+                    } catch let error {
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
 }
