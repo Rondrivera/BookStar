@@ -15,7 +15,8 @@ class BookReviewDetailVC: UITableViewController {
     @IBOutlet weak var bookImg: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookDescription: UILabel!
-
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     @IBOutlet weak var starAverage: UILabel!
     
     var selectedBook: Book!
@@ -89,6 +90,12 @@ class BookReviewDetailVC: UITableViewController {
     
     @IBAction func didTapAddReview() {
         performSegue(withIdentifier: "AddReview", sender: self)
+    }
+    
+    @IBAction func favoriteTouched(_ sender: Any) {
+        NetworkServices.addFavorite( bookID: selectedBook.id) { success, error in
+            print("success = ", success, error)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
