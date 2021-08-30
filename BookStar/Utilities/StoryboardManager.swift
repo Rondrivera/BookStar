@@ -16,8 +16,8 @@ class StoryboardManager {
     }
     
     class func segueToHome() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavController = mainStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.homeNavigationController) as! UINavigationController
+        let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let homeNavController = mainStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.homeNavigationController) as! UITabBarController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.replaceRootViewController(with: homeNavController)
     }
