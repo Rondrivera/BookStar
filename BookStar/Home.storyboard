@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="647.82608695652175" y="1376.7857142857142"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Favorites-->
         <scene sceneID="eb4-yf-vwC">
             <objects>
-                <tableViewController id="gwr-WA-LNz" sceneMemberID="viewController">
+                <tableViewController id="gwr-WA-LNz" customClass="TVCFavoriteBookList" customModule="BookStar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ndf-Wv-AeW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
                         <sections>
                             <tableViewSection id="ZqD-zg-VDs">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Hy1-yf-paw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Hy1-yf-paw" customClass="TVCellFavorite" customModule="BookStar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hy1-yf-paw" id="K7Y-O1-f2F">
@@ -122,18 +122,18 @@
                                                         <constraint firstAttribute="height" constant="84" id="pie-qX-fIR"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-mw-u75">
+                                                    <rect key="frame" x="108" y="37" width="286" height="55"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-N3-E0A">
                                                     <rect key="frame" x="108" y="8" width="286" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="dx2-Rg-38n"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-mw-u75">
-                                                    <rect key="frame" x="108" y="37" width="286" height="55"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -150,6 +150,11 @@
                                                 <constraint firstItem="bwr-N3-E0A" firstAttribute="leading" secondItem="4TS-OX-dCQ" secondAttribute="trailing" constant="8" symbolic="YES" id="vJ6-wC-s2s"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bookImage" destination="4TS-OX-dCQ" id="CPZ-9C-55H"/>
+                                            <outlet property="descriptionLabel" destination="CLv-mw-u75" id="kY6-Sk-eTC"/>
+                                            <outlet property="titleLabel" destination="bwr-N3-E0A" id="9LE-ck-ym4"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="11U-Xt-sqB">
                                         <rect key="frame" x="0.0" y="124.5" width="414" height="100"/>
@@ -245,7 +250,7 @@
                             <outlet property="delegate" destination="gwr-WA-LNz" id="Q7m-ZN-CAi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="sKE-ew-aQS"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="sKE-ew-aQS"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoR-zL-F7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -482,6 +487,7 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="star" catalog="system"/>
+                                    <state key="selected" image="star.fill" catalog="system"/>
                                     <connections>
                                         <action selector="favoriteTouched:" destination="36d-at-Tsr" eventType="touchUpInside" id="igo-dh-WaU"/>
                                     </connections>
@@ -799,6 +805,7 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
