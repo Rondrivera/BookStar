@@ -210,7 +210,11 @@ class NetworkServices {
         }
     }
     
-    static func getFavorites(userID : String, limit: Int? = nil, completionHandler: @escaping (_ response: Any?, _ error: Error?) -> Void) {
+    static func getFavorites(limit: Int? = nil,  completionHandler: @escaping (_ response: Any?, _ error: Error?) -> Void) {
+        guard let userID =  User.currentUser.id else {
+            completionHandler(false, nil)
+            return
+        }
         var ref: Query? = nil
         if let limit = limit {
             ref = Firestore.firestore().collection("User").document(userID).collection("favorite").limit(to: limit)
@@ -229,16 +233,17 @@ class NetworkServices {
                     return
                 }
                 
-                let reviewDocuments = documentSnapshot.documents
-                var reviews = [Favorite]()
-                for document in reviewDocuments {
+                let favoriteDocuments = documentSnapshot.documents
+                var favorites : [Favorite] = []
+                for document in favoriteDocuments {
                     do {
-                        let review = try document.data(as: Favorite.self)
-                        reviews.append(review!)
+                        let favorite = try document.data(as: Favorite.self)
+                        favorites.append(favorite!)
                     } catch let error {
                         print(error)
                     }
                 }
+                completionHandler(favorites, error)
             }
         }
     }
