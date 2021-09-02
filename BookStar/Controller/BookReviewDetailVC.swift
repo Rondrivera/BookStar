@@ -16,7 +16,6 @@ class BookReviewDetailVC: UITableViewController {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookDescription: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-    
     @IBOutlet weak var starAverage: UILabel!
     
     var selectedBook: Book!
@@ -50,6 +49,8 @@ class BookReviewDetailVC: UITableViewController {
         
         bookTitle.text = selectedBook.title
         bookDescription.text = selectedBook.description
+        
+        self.favoriteButton.isSelected = FavoriteManager.shared.isFavorite(self.selectedBook.id)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,6 +96,13 @@ class BookReviewDetailVC: UITableViewController {
     @IBAction func favoriteTouched(_ sender: Any) {
         NetworkServices.addFavorite( bookID: selectedBook.id) { success, error in
             print("success = ", success, error)
+            if success {
+                if let b = sender as? UIButton {
+                    b.isSelected = true
+                }
+                FavoriteManager.shared.updateFavorites { updated, favorite in
+                }
+            }
         }
     }
     
