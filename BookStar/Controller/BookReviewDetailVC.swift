@@ -18,6 +18,7 @@ class BookReviewDetailVC: UITableViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var starAverage: UILabel!
     
+    var genre : BookGenre!
     var selectedBook: Book!
     var reviews: [BookReview] = []
     var myReviews: [String: String] = [:]
@@ -94,7 +95,7 @@ class BookReviewDetailVC: UITableViewController {
     }
     
     @IBAction func favoriteTouched(_ sender: Any) {
-        NetworkServices.addFavorite( bookID: selectedBook.id) { success, error in
+        NetworkServices.addFavorite( bookID: selectedBook.id, genre: selectedGenre) { success, error in
             print("success = ", success, error)
             if success {
                 if let b = sender as? UIButton {

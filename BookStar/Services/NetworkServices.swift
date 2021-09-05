@@ -113,11 +113,11 @@ class NetworkServices {
                     return
                 }
                 let genreDocuments = documentSnapshot.documents
-                var generes = [String]()
+                var genres = [String]()
                 for document in genreDocuments {
-                    generes.append(document.documentID)
+                    genres.append(document.documentID)
                 }
-                completionHandler(generes, nil)
+                completionHandler(genres, nil)
             }
         }
     }
@@ -190,7 +190,7 @@ class NetworkServices {
     }
     
     
-    static func addFavorite(bookID:String, completionHandler: @escaping (_ succeeded: Bool, _ error: Error?) -> Void) {
+    static func addFavorite(bookID:String, genre:String, completionHandler: @escaping (_ succeeded: Bool, _ error: Error?) -> Void) {
         guard let userId =  User.currentUser.id else {
             completionHandler(false, nil)
             return
@@ -200,6 +200,7 @@ class NetworkServices {
         
         var data = [String: Any]()
         data["bookID"] = bookID
+        data["genre"] = genre
         
         docRef.setData(data, merge: true) { error in
             if let error = error {
@@ -245,6 +246,41 @@ class NetworkServices {
                 }
                 completionHandler(favorites, error)
             }
+        }
+    }
+    
+    static func getFavoriteBooks (favorites:[Favorite], completionHandler: @escaping(_ books:[Book]?, _ error:Error?)->Void) {
+        //myCollection.where(firestore.FieldPath.documentId(), 'in', ["123","456","789"])
+        let fireStore = Firestore.firestore()
+
+        var books : [Book] = []
+        let genreArray = favorites.compactMap { $0.genre }
+        let distinctGenreArray : [String] = Array(Set(genreArray))//distinct
+        for genre in distinctGenreArray {
+            let bookIds = (favorites.filter {$0.genre == genre}).compactMap {$0.bookID}
+            let distinctBookIds = Array(Set(bookIds))
+            let ref: Query? = fireStore.collection("Books").document(genre).collection("Books").whereField("id", in: distinctBookIds)
+            ref?.getDocuments(completion: {(snapShot, error) in
+                guard let ds = snapShot, !ds.isEmpty else {
+                    print(error ?? "Unknow Error")
+                    completionHandler (nil, nil)
+                    return
+                }
+                
+                let bds = ds.documents
+                var bs : [Book] = []
+                for d in bds {
+                    do {
+                        if let b = try d.data(as: Book.self) {
+                            bs.append(b)
+                        }
+                    }catch{
+                        print(error)
+                    }
+                }
+                books.append(contentsOf: bs)
+                completionHandler(books, error)
+            })
         }
     }
 }

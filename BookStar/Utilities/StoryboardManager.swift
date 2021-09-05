@@ -8,17 +8,24 @@
 import UIKit
 
 class StoryboardManager {
-    class func segueToLogin() {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let authNavController = mainStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.authNavigationController) as! UINavigationController
+    class func segueTo (storyBoard:String, viewController:String) {
+        let mainStoryboard = UIStoryboard(name: storyBoard, bundle: nil)
+        let homeNavController = mainStoryboard.instantiateViewController(withIdentifier: viewController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.replaceRootViewController(with: authNavController)
+        appDelegate.replaceRootViewController(with: homeNavController)
+    }
+    
+    class func viewController (fromNames storyBoard:String, viewController:String) -> UIViewController? {
+        let storyboard = UIStoryboard(name: storyBoard, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: viewController)
+    }
+
+
+    class func segueToLogin() {
+        StoryboardManager.segueTo(storyBoard: "Main", viewController: Constants.Storyboard.authNavigationController)
     }
     
     class func segueToHome() {
-        let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let homeNavController = mainStoryboard.instantiateViewController(withIdentifier: Constants.Storyboard.homeNavigationController) as! UITabBarController
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.replaceRootViewController(with: homeNavController)
+        StoryboardManager.segueTo(storyBoard: "Home", viewController: Constants.Storyboard.homeNavigationController)
     }
 }

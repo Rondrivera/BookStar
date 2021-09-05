@@ -13,5 +13,6 @@ struct Constants {
     struct Storyboard {
         static let authNavigationController = "AuthNavigationController"
         static let homeNavigationController = "HomeNavigationController"
+        static let favoriteViewController = "KfavoriteViewController"
     }  
 }

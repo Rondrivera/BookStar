@@ -9,6 +9,7 @@ import Foundation
 
 struct Favorite: Codable {
     let bookID: String
+    let genre: String
 }
 
 class FavoriteManager {

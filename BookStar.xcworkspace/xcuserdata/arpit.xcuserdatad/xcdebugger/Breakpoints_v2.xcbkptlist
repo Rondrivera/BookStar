@@ -14,8 +14,8 @@
             filePath = "BookStar/Controller/BookReviewDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "favoriteTouched(_:)"
             landmarkType = "7">
             <Locations>
@@ -56,55 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EAAB5DF1-3533-45C2-9BD9-B8A52AB0671A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookStar/Model/Favorite.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "updateFavorites(limit:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EAAB5DF1-3533-45C2-9BD9-B8A52AB0671A - 25b7de2eb4bb16fd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookStar.FavoriteManager.updateFavorites(limit: Swift.Optional&lt;Swift.Int&gt;, _: (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt;) -&gt; ()"
-                  moduleName = "BookStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Model/Favorite.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  uuid = "EAAB5DF1-3533-45C2-9BD9-B8A52AB0671A - 98e4344211799a10"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookStar.FavoriteManager.updateFavorites(limit: Swift.Optional&lt;Swift.Int&gt;, _: (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt;) -&gt; ()"
-                  moduleName = "BookStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Model/Favorite.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "244">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0087BD57-D777-4BF0-87DA-05D9868085B3"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Model/Favorite.swift"
@@ -114,21 +66,133 @@
             endingLineNumber = "25"
             landmarkName = "updateFavorites(limit:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAAB5DF1-3533-45C2-9BD9-B8A52AB0671A - 25b7de2eb4bb16c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BookStar.FavoriteManager.updateFavorites(limit: Swift.Optional&lt;Swift.Int&gt;, _: (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt;) -&gt; ()"
+                  moduleName = "BookStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Model/Favorite.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "74">
+               </Location>
+               <Location
+                  uuid = "EAAB5DF1-3533-45C2-9BD9-B8A52AB0671A - 98e4344211799df1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookStar.FavoriteManager.updateFavorites(limit: Swift.Optional&lt;Swift.Int&gt;, _: (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt;) -&gt; ()"
+                  moduleName = "BookStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Model/Favorite.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0087BD57-D777-4BF0-87DA-05D9868085B3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookStar/Model/Favorite.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "updateFavorites(limit:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A4221E67-97A4-418C-BC7F-12DC532A7202"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Services/NetworkServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "getFavorites(limit:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E3E5289-2F65-4754-BC07-9DB2451A1BF5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookStar/Controller/TVCFavoriteBookList.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "loadFavorites()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4E3E5289-2F65-4754-BC07-9DB2451A1BF5 - 4f1dd8e08300cf98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt; in BookStar.TVCFavoriteBookList.loadFavorites() -&gt; ()"
+                  moduleName = "BookStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Controller/TVCFavoriteBookList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "4E3E5289-2F65-4754-BC07-9DB2451A1BF5 - 33c5a73eff47e57f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;BookStar.Book&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Bool, Swift.Array&lt;BookStar.Favorite&gt;) -&gt; Swift.Optional&lt;()&gt; in BookStar.TVCFavoriteBookList.loadFavorites() -&gt; ()"
+                  moduleName = "BookStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Controller/TVCFavoriteBookList.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "134">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04069B25-C74B-49F2-9CD5-A139142D6D78"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookStar/Controller/BookSelectionVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
