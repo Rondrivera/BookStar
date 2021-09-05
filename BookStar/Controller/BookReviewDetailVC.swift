@@ -43,7 +43,21 @@ class BookReviewDetailVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
+        //fetch fresh review
+        fetchReviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.setViewData(book: selectedBook)
+    }
+    
+    func setViewData(book:Book) {
         if let url = URL(string: "https" + selectedBook.thumbnail.dropFirst(4)) {
             bookImg.kf.setImage(with: url)
         }
@@ -52,13 +66,6 @@ class BookReviewDetailVC: UITableViewController {
         bookDescription.text = selectedBook.description
         
         self.favoriteButton.isSelected = FavoriteManager.shared.isFavorite(self.selectedBook.id)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        //fetch fresh review
-        fetchReviews()
     }
     
     func fetchReviews() {

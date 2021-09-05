@@ -196,7 +196,7 @@ class NetworkServices {
             return
         }
 
-        let docRef = Firestore.firestore().collection("User").document(userId).collection("favorite").document()
+        let docRef = Firestore.firestore().collection("Users").document(userId).collection("favorites").document()
         
         var data = [String: Any]()
         data["bookID"] = bookID
@@ -218,9 +218,9 @@ class NetworkServices {
         }
         var ref: Query? = nil
         if let limit = limit {
-            ref = Firestore.firestore().collection("User").document(userID).collection("favorite").limit(to: limit)
+            ref = Firestore.firestore().collection("Users").document(userID).collection("favorites").limit(to: limit)
         } else {
-            ref = Firestore.firestore().collection("User").document(userID).collection("favorite")
+            ref = Firestore.firestore().collection("Users").document(userID).collection("favorites")
         }
         
         ref!.getDocuments { (snapshot, error) in

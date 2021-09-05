@@ -36,4 +36,11 @@ class FavoriteManager {
     func isFavorite(_ bookID : String) -> Bool {
         return self.favorites.filter({$0.bookID == bookID}).count > 0
     }
+    
+    func genre (bookID : String) -> String? {
+        if let b = self.favorites.filter({$0.bookID == bookID}).first {
+            return b.genre
+        }
+        return nil
+    }
 }
