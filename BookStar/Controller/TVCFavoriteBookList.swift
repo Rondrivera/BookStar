@@ -37,7 +37,7 @@ class TVCFavoriteBookList : UITableViewController {
             self.loadBooks(favorites: self.favorites)
         }
     }
-
+    
     var favoriteBooks : [Book] = [] {
         didSet {
             self.tableView.reloadData()
@@ -89,7 +89,6 @@ extension TVCFavoriteBookList {
 }
 
 //MARK: Navigation
-
 extension TVCFavoriteBookList {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? BookReviewDetailVC, let ip = sender as? IndexPath {
@@ -99,6 +98,3 @@ extension TVCFavoriteBookList {
         }
     }
 }
-
-
-    

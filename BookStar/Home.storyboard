@@ -106,11 +106,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ci_tvCellFavoriteBook" id="Hy1-yf-paw" customClass="TVCellFavoriteBook" customModule="BookStar" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ci_tvCellFavoriteBook" id="Hy1-yf-paw" customClass="TVCellFavoriteBook" customModule="BookStar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="100.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hy1-yf-paw" id="K7Y-O1-f2F">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="384.5" height="100.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4TS-OX-dCQ">
@@ -121,18 +121,18 @@
                                                 <constraint firstAttribute="height" constant="84" id="pie-qX-fIR"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-mw-u75">
-                                            <rect key="frame" x="108" y="37" width="286" height="55.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-mw-u75">
+                                            <rect key="frame" x="108" y="37" width="256.5" height="55.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwr-N3-E0A">
-                                            <rect key="frame" x="108" y="8" width="286" height="21"/>
+                                            <rect key="frame" x="108" y="8" width="256.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="dx2-Rg-38n"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -154,7 +154,6 @@
                                     <outlet property="bookImage" destination="4TS-OX-dCQ" id="CPZ-9C-55H"/>
                                     <outlet property="descriptionLabel" destination="CLv-mw-u75" id="kY6-Sk-eTC"/>
                                     <outlet property="titleLabel" destination="bwr-N3-E0A" id="9LE-ck-ym4"/>
-                                    <segue destination="36d-at-Tsr" kind="show" identifier="si_favoriteToDetail" id="EeO-a3-VdX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -165,6 +164,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorites" id="sKE-ew-aQS"/>
+                    <connections>
+                        <segue destination="36d-at-Tsr" kind="show" identifier="si_favoriteToDetail" id="Fkv-Ub-Ktt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoR-zL-F7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -530,7 +532,7 @@
                                     <action selector="addAction:" destination="i2Z-YY-jNa" eventType="touchUpInside" id="WEK-zC-iAO"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-id-bEl" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZX-id-bEl" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="122" y="138" width="170" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -708,8 +710,16 @@
             <point key="canvasLocation" x="-262" y="2888"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Vem-6D-PTI">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+        <designable name="xZX-id-bEl">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="EeO-a3-VdX"/>
+        <segue reference="Fkv-Ub-Ktt"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>

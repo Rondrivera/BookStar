@@ -18,13 +18,17 @@ class BookReviewDetailVC: UITableViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var starAverage: UILabel!
     
-    var genre : BookGenre!
     var selectedBook: Book!
+    var selectedGenre: String! {
+        didSet {
+            fetchReviews()
+        }
+    }
+
     var reviews: [BookReview] = []
     var myReviews: [String: String] = [:]
     var averageRating: Double!
     var numberOfReviews: Int!
-    var selectedGenre: String!
     var errorMessage: String = ""
     var showMessage: Bool = false {
         didSet {
@@ -43,29 +47,24 @@ class BookReviewDetailVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setViewData(book: self.selectedBook)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        //fetch fresh review
-        fetchReviews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.setViewData(book: selectedBook)
     }
     
     func setViewData(book:Book) {
-        if let url = URL(string: "https" + selectedBook.thumbnail.dropFirst(4)) {
+        if let url = URL(string: "https" + book.thumbnail.dropFirst(4)) {
             bookImg.kf.setImage(with: url)
         }
-        
-        bookTitle.text = selectedBook.title
-        bookDescription.text = selectedBook.description
-        
-        self.favoriteButton.isSelected = FavoriteManager.shared.isFavorite(self.selectedBook.id)
+        bookTitle.text = book.title
+        bookDescription.text = book.description
+        self.favoriteButton.isSelected = FavoriteManager.shared.isFavorite(book.id)
     }
     
     func fetchReviews() {
