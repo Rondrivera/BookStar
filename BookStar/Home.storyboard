@@ -293,6 +293,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="nen-D9-dPC">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dzF-Cl-rXM" id="yk6-hg-riU"/>
+                                </connections>
+                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0oy-Ht-fsW">
                                 <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -323,24 +330,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Nvo-2W-f9h">
-                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="dzF-Cl-rXM" id="ap8-SU-cN9"/>
-                                </connections>
-                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9kO-M1-nJx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="leading" secondItem="9kO-M1-nJx" secondAttribute="leading" id="CqE-CE-MnV"/>
-                            <constraint firstItem="Nvo-2W-f9h" firstAttribute="leading" secondItem="9kO-M1-nJx" secondAttribute="leading" id="IZx-XB-co7"/>
-                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="trailing" secondItem="9kO-M1-nJx" secondAttribute="trailing" id="Ny7-61-2Fe"/>
-                            <constraint firstItem="Nvo-2W-f9h" firstAttribute="top" secondItem="9kO-M1-nJx" secondAttribute="top" id="ZxF-ab-oDL"/>
-                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="top" secondItem="Nvo-2W-f9h" secondAttribute="bottom" id="bD7-5N-4hN"/>
-                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="bottom" secondItem="9kO-M1-nJx" secondAttribute="bottom" id="me3-BC-qbd"/>
-                            <constraint firstItem="Nvo-2W-f9h" firstAttribute="trailing" secondItem="9kO-M1-nJx" secondAttribute="trailing" id="sZF-cI-loF"/>
+                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="leading" secondItem="9kO-M1-nJx" secondAttribute="leading" id="1yW-r6-k7p"/>
+                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="bottom" secondItem="9kO-M1-nJx" secondAttribute="bottom" id="E6p-Kt-pHd"/>
+                            <constraint firstItem="nen-D9-dPC" firstAttribute="trailing" secondItem="9kO-M1-nJx" secondAttribute="trailing" id="Hmz-fE-x0P"/>
+                            <constraint firstItem="nen-D9-dPC" firstAttribute="top" secondItem="9kO-M1-nJx" secondAttribute="top" id="RRs-Fz-ch7"/>
+                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="trailing" secondItem="9kO-M1-nJx" secondAttribute="trailing" id="aAq-i1-4aE"/>
+                            <constraint firstItem="nen-D9-dPC" firstAttribute="leading" secondItem="9kO-M1-nJx" secondAttribute="leading" id="mfJ-cb-Npg"/>
+                            <constraint firstItem="0oy-Ht-fsW" firstAttribute="top" secondItem="nen-D9-dPC" secondAttribute="bottom" id="nhd-Ez-uPb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9OM-3F-GTH"/>
