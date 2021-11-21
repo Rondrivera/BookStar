@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B48F9C32749AB11000C6A54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B48F9C22749AB10000C6A54 /* Home.storyboard */; };
 		4F04C93E2667396E00D2C92E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C93D2667396E00D2C92E /* User.swift */; };
 		4F04C94126673EEC00D2C92E /* StoryboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F04C94026673EEC00D2C92E /* StoryboardManager.swift */; };
 		4F8F43BA2632775500DFB818 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F43B92632775500DFB818 /* NetworkServices.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		25AF05F9941330E77FE9E7F3 /* Pods_BookStar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B48F9C22749AB10000C6A54 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		302C8A2440B37509D9F95F38 /* Pods-BookStarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStarUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookStarUITests/Pods-BookStarUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F04C93D2667396E00D2C92E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4F04C94026673EEC00D2C92E /* StoryboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardManager.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		87E8A9E42564B19900747935 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2B48F9C22749AB10000C6A54 /* Home.storyboard */,
 				87E8A9AF2564B11900747935 /* ViewController.swift */,
 				87D021C82579E5930025AD70 /* BookSelectionVC.swift */,
 				87D021D2257B3D450025AD70 /* BookReviewDetailVC.swift */,
@@ -385,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87173BEA2598315D00B86C23 /* GoogleService-Info.plist in Resources */,
+				2B48F9C32749AB11000C6A54 /* Home.storyboard in Resources */,
 				87E8A9BB2564B12200747935 /* LaunchScreen.storyboard in Resources */,
 				87E8A9B82564B12100747935 /* Assets.xcassets in Resources */,
 				87E8A9B32564B11900747935 /* Main.storyboard in Resources */,

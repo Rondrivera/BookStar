@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "66E5B6C5-A5DB-4E38-9CB6-E1A918AD8B5A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Controller/BookReviewDetailVC.swift"
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A243A7AF-60D8-46AC-90C3-54D06BFFACF9"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Controller/BookReviewDetailVC.swift"
@@ -50,45 +50,13 @@
             endingLineNumber = "62"
             landmarkName = "fetchReviews()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A243A7AF-60D8-46AC-90C3-54D06BFFACF9 - 2071dcd0d49f099b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookStar.BookReviewDetailVC.fetchReviews() -&gt; ()"
-                  moduleName = "BookStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Controller/BookReviewDetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "74">
-               </Location>
-               <Location
-                  uuid = "A243A7AF-60D8-46AC-90C3-54D06BFFACF9 - c0df4f8dc37504e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in BookStar.BookReviewDetailVC.fetchReviews() -&gt; ()"
-                  moduleName = "BookStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arpit/Work/CodeMentor/Ron/BookStar/BookStar/Controller/BookReviewDetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "238">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "21345E0A-F327-4E76-A40C-A3A96D5E70B2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Controller/BookReviewDetailVC.swift"
