@@ -8,13 +8,18 @@
 import UIKit
 
 class BookSelectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-
     @IBOutlet weak var collectionView: UICollectionView!
-    
     var selectedGenre: String!
-    var books: [Book] = []
-    var bookToPass: Book!
+    var books: [Book] = [] {
+        didSet {
+            filteredBooks = books
+        }
+    }
+    var filteredBooks: [Book] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +35,17 @@ class BookSelectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
                 print(error)
             } else if let bookList = books as? [Book] {
                 self.books = bookList
-                self.collectionView.reloadData()
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return books.count
+        return filteredBooks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookCell", for: indexPath) as? BookCell {
-            let book = books[indexPath.item]
+            let book = filteredBooks[indexPath.item]
             cell.configureCell(book: book)
             return cell
         }
@@ -54,14 +58,31 @@ class BookSelectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        bookToPass = books[indexPath.item]
-        performSegue(withIdentifier: "toBookSelection", sender: self)
+        performSegue(withIdentifier: "toBookDetail", sender: filteredBooks[indexPath.item])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailsVC = segue.destination as? BookReviewDetailVC {
-            detailsVC.selectedBook = bookToPass
+        if let detailsVC = segue.destination as? BookReviewDetailVC, let book = sender as? Book {
+            detailsVC.selectedBook = book
             detailsVC.selectedGenre = selectedGenre
         }
+    }
+}
+
+extension BookSelectionVC:UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filter(searchText)
+    }
+    
+    func filter (_ filterText:String?) {
+        guard let text = filterText, text.count > 0 else {
+            filteredBooks = books
+            return
+        }
+        filteredBooks = books.filter { ($0.title.range(of: text, options: .caseInsensitive) != nil) || ($0.description.range(of: text, options: .caseInsensitive) != nil)}
     }
 }

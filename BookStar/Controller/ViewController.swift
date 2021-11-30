@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FavoriteManager.shared.updateFavorites { updated, favorites in}
+        
         tableView.delegate = self
         tableView.dataSource = self
         
