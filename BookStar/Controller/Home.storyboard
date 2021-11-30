@@ -502,6 +502,7 @@
                         <outlet property="bookDescription" destination="PTG-k0-v4e" id="GF8-qL-Agu"/>
                         <outlet property="bookImg" destination="iPW-5j-NMD" id="WAN-hv-sLV"/>
                         <outlet property="bookTitle" destination="kIA-4D-98I" id="F61-nX-mbX"/>
+                        <outlet property="favoriteButton" destination="YlL-hz-MuC" id="m24-NW-vCO"/>
                         <outlet property="starAverage" destination="0wV-Np-slb" id="Cq2-4p-jgn"/>
                         <segue destination="i2Z-YY-jNa" kind="show" identifier="AddReview" id="w5U-Hb-oN3"/>
                     </connections>
