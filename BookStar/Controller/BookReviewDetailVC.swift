@@ -15,15 +15,20 @@ class BookReviewDetailVC: UITableViewController {
     @IBOutlet weak var bookImg: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookDescription: UILabel!
-
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var starAverage: UILabel!
     
     var selectedBook: Book!
+    var selectedGenre: String! {
+        didSet {
+            fetchReviews()
+        }
+    }
+
     var reviews: [BookReview] = []
     var myReviews: [String: String] = [:]
     var averageRating: Double!
     var numberOfReviews: Int!
-    var selectedGenre: String!
     var errorMessage: String = ""
     var showMessage: Bool = false {
         didSet {
@@ -42,20 +47,24 @@ class BookReviewDetailVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let url = URL(string: "https" + selectedBook.thumbnail.dropFirst(4)) {
-            bookImg.kf.setImage(with: url)
-        }
-        
-        bookTitle.text = selectedBook.title
-        bookDescription.text = selectedBook.description
+        self.setViewData(book: self.selectedBook)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        //fetch fresh review
-        fetchReviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func setViewData(book:Book) {
+        if let url = URL(string: "https" + book.thumbnail.dropFirst(4)) {
+            bookImg.kf.setImage(with: url)
+        }
+        bookTitle.text = book.title
+        bookDescription.text = book.description
+        self.favoriteButton.isSelected = FavoriteManager.shared.isFavorite(book.id)
     }
     
     func fetchReviews() {
@@ -89,6 +98,19 @@ class BookReviewDetailVC: UITableViewController {
     
     @IBAction func didTapAddReview() {
         performSegue(withIdentifier: "AddReview", sender: self)
+    }
+    
+    @IBAction func favoriteTouched(_ sender: Any) {
+        NetworkServices.addFavorite( bookID: selectedBook.id, genre: selectedGenre) { success, error in
+            print("success = ", success, error)
+            if success {
+                if let b = sender as? UIButton {
+                    b.isSelected = true
+                }
+                FavoriteManager.shared.updateFavorites { updated, favorite in
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
