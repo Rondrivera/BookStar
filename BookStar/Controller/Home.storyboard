@@ -327,6 +327,9 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XdN-iZ-nyR">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="dzF-Cl-rXM" id="YbK-Su-8O9"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9kO-M1-nJx"/>
@@ -344,7 +347,7 @@
                     <navigationItem key="navigationItem" id="9OM-3F-GTH"/>
                     <connections>
                         <outlet property="collectionView" destination="0oy-Ht-fsW" id="Aj7-G2-PcO"/>
-                        <segue destination="36d-at-Tsr" kind="show" identifier="toBookSelection" id="4kf-Zf-2e0"/>
+                        <segue destination="36d-at-Tsr" kind="show" identifier="toBookDetail" id="4kf-Zf-2e0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKA-SP-TsK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -499,7 +502,6 @@
                         <outlet property="bookDescription" destination="PTG-k0-v4e" id="GF8-qL-Agu"/>
                         <outlet property="bookImg" destination="iPW-5j-NMD" id="WAN-hv-sLV"/>
                         <outlet property="bookTitle" destination="kIA-4D-98I" id="F61-nX-mbX"/>
-                        <outlet property="favoriteButton" destination="YlL-hz-MuC" id="j7V-0n-k0y"/>
                         <outlet property="starAverage" destination="0wV-Np-slb" id="Cq2-4p-jgn"/>
                         <segue destination="i2Z-YY-jNa" kind="show" identifier="AddReview" id="w5U-Hb-oN3"/>
                     </connections>
@@ -581,7 +583,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ViI-cN-xFl">
             <objects>
-                <tabBarController storyboardIdentifier="HomeNavigationController" id="hhX-Th-6Pq" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="sbi_HomeTabViewController" id="hhX-Th-6Pq" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="41x-iv-76m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -601,7 +603,7 @@
         <!--Home-->
         <scene sceneID="FKO-8P-JAE">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zR5-LH-iFs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="sbi_HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="zR5-LH-iFs" customClass="HomeNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="VOC-AS-P3x"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gH-Jb-Pcv">

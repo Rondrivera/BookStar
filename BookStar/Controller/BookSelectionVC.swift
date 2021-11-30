@@ -58,7 +58,7 @@ class BookSelectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toBookSelection", sender: filteredBooks[indexPath.item])
+        performSegue(withIdentifier: "toBookDetail", sender: filteredBooks[indexPath.item])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
