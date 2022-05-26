@@ -30,8 +30,8 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "fetchBooks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "fetchBooks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "fetchBooks()"
             landmarkType = "7">
             <Locations>
@@ -110,8 +110,8 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "fetchBooks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,9 +126,9 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "fetchBooks()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,8 +142,8 @@
             filePath = "BookStar/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "fetchBooks()"
             landmarkType = "7">
          </BreakpointContent>
@@ -344,7 +344,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A8932982-156E-4850-90A2-ED54B9A87484"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStar/Controller/TVCFavoriteBookList.swift"
@@ -372,11 +372,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "656509E1-ECF1-491F-A266-1196B80C7862 - 8d40f1d5a2a3875d"
+                  uuid = "656509E1-ECF1-491F-A266-1196B80C7862 - 6069d987c45d1fa7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "BookStar.FavoriteManager.genere(bookID: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  symbolName = "BookStar.FavoriteManager.genre(bookID: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
                   moduleName = "BookStar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ronrivera/Documents/BookStar/BookStar/Model/Favorite.swift"
@@ -387,11 +387,11 @@
                   offsetFromSymbolStart = "58">
                </Location>
                <Location
-                  uuid = "656509E1-ECF1-491F-A266-1196B80C7862 - 16d34935e8151790"
+                  uuid = "656509E1-ECF1-491F-A266-1196B80C7862 - 3fdfca302ea82c6b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (BookStar.Favorite) -&gt; Swift.Bool in BookStar.FavoriteManager.genere(bookID: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  symbolName = "closure #1 (BookStar.Favorite) -&gt; Swift.Bool in BookStar.FavoriteManager.genre(bookID: Swift.String) -&gt; Swift.Optional&lt;Swift.String&gt;"
                   moduleName = "BookStar"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ronrivera/Documents/BookStar/BookStar/Model/Favorite.swift"
